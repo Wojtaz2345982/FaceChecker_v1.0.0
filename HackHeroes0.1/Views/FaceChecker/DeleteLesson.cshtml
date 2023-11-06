@@ -1,0 +1,34 @@
+﻿@model HackHeroes.Application.HackHeroes.Commands.Lesson.DeleteLesson.DeleteLessonCommand
+
+@{
+    ViewData["Title"] = "DeleteLesson";
+}
+
+<h1 class="text-theme">Usuwanie lekcji</h1>
+
+<h3 class="text-theme">Jesteś pewny, że chcesz usunąć tą lekcje?</h3>
+<div>
+    <h4></h4>
+    <hr class="text-theme" />
+    <dl class="row">
+        <dt class="col-sm-2 text-theme" style="font-size: 22px;">
+            Data
+        </dt>
+        <dd class="col-sm-10 text-theme" style="font-size: 22px;">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2 text-theme" style="font-size: 22px;">
+            Temat
+        </dt>
+        <dd class="col-sm-10 text-theme" style="font-size: 22px;">
+            @Html.DisplayFor(model => model.Topic)
+        </dd>
+
+    </dl>
+    <form asp-action="DeleteLesson">
+        <div class="btn-group">
+            <input type="submit" value="Usuń" class="btn btn-danger card-del-btn btn-theme" />
+            <a asp-action="LessonsIndex" class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme " style="white-space: nowrap;">Powrót</a>
+        </div>
+    </form>
+</div>

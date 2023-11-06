@@ -1,0 +1,67 @@
+﻿@model IEnumerable<HackHeroes.Application.HackHeroes.LessonDto>
+
+@{
+    ViewData["Title"] = "Lesson Index";
+
+}
+
+
+<h1 class="text-theme">Twoje lekcje</h1>
+
+<p>
+    <a asp-action="CreateLesson" asp class="btn btn-success add-btn-theme special-btn-theme">Stwórz nową</a>
+</p>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="card m-3 card-div-theme-item" style="width: 18rem; border-radius: 15px;">
+            <div class="card-body ">
+                <h5 class="card-title text-smaller-theme" style="font-size:20px !important; text-align:center;">
+                    @item.Class.Name
+                </h5>
+                <hr class="text-theme" />
+                @{
+                    if (item.Class != null && item.WasStarted)
+                    {
+                        <h5 class="card-title text-smaller-theme" style="font-size:21px !important; text-align:center;">
+                            @item.Topic   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                            </svg>
+                        </h5>
+                        <hr class="text-theme" />
+                    }
+                    else if (item.Class != null)
+                    {
+                        <h5 class="card-title text-smaller-theme" style="font-size:21px !important; text-align:center;">@item.Topic</h5>
+                        <hr class="text-theme" />
+
+                    }
+                }
+
+                <h5 class="card-title text-smaller-theme" style="font-size:21px !important; text-align:center;">@item.Date.ToString("HH:mm dd")</h5>
+
+                <h5 class="card-title text-smaller-theme" style="font-size:21px !important; text-align:center;">@item.Date.ToString("MMMM")</h5>
+                <div class="btn-group" style="display: flex; justify-content: center; align-items: center;">
+                    @if (item.WasStarted)
+                    {
+                        <a asp-controller="FaceChecker" asp-action="DetailsLesson" asp-route-encodedLesson="@item.EncodedLesson" asp class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme">Szczegóły</a>
+                    }
+                    else
+                    {
+
+                        <a asp-controller="FaceChecker" asp-action="PrepereLesson" asp-route-encodedLesson="@item.EncodedLesson" asp class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme">Rozpocznij</a>
+                    }
+                    <a asp-controller="FaceChecker" asp-action="DeleteLesson" asp-route-encodedLesson="@item.EncodedLesson" asp class="btn-lg btn btn-danger card-del-btn">Usuń</a>
+                </div>
+
+
+            </div>
+
+        </div>
+    }
+
+
+
+</div>

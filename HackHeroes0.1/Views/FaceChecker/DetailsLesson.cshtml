@@ -1,0 +1,57 @@
+﻿@model HackHeroes.Application.HackHeroes.LessonDto
+
+@{
+    ViewData["Title"] = "DetailsLesson";
+}
+
+<h1 class="text-theme">Szczegóły lekcji</h1>
+
+<div>
+    <hr class="text-theme" />
+    <dl class="row">
+
+        <dt class="col-sm-2 text-theme" style="font-size: 22px">
+            Data:
+        </dt>
+
+        <dd class="col-sm-10 text-theme" style="font-size: 22px">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2 text-theme" style="font-size: 22px">
+            Temat:
+        </dt>
+
+        <dd class="col-sm-10 text-theme" style="font-size: 22px">
+            @Html.DisplayFor(model => model.Topic)
+        </dd>
+
+    </dl>
+    <hr class="text-theme" />
+</div>
+<div>
+    <ul style="font-size: 17px">
+        @foreach (var item in Model.AttendaceAtTheLesson!)
+        {
+            if(!(string.IsNullOrEmpty(item.FirstName) && string.IsNullOrEmpty(item.LastName)))
+            {
+                <li class="text-theme">@item.FirstName @item.LastName - @if (item.WasThere)
+                    {
+                        <span class="secPresent">Obecny</span>
+                    }  @if (!item.WasThere && !item.WasLate == null)
+                    {
+                        <span class="secAbsent">Nieobecny</span>
+                    }
+                    @if (item.WasLate != null && (bool)item.WasLate)
+                    {
+                        <span class="belated">Spóźniony</span>
+                    }
+                </li>
+                
+            }
+        }
+    </ul>
+
+</div>
+<div class="btn-group">
+    <a asp-action="LessonsIndex" class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme " style="white-space: nowrap;">Powrót</a>
+</div>

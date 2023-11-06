@@ -1,0 +1,5 @@
+Flask
+face-recognition
+Pillow
+numpy
+pyodbc

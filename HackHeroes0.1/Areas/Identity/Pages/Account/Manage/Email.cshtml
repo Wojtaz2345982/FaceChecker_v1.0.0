@@ -1,0 +1,30 @@
+﻿@page
+@model EmailModel
+@{
+    ViewData["Title"] = "Zarządzaj pocztą e-mail";
+    ViewData["ActivePage"] = ManageNavPages.Email;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="col-md-10 col-lg-8 col-xl-7 borderStyle border mt-3 bgGradient textAlign">
+
+        <h3 class="text-theme">@ViewData["Title"]</h3>
+
+        <hr class="text-theme" />
+        <form id="email-form" method="post">
+            <div asp-validation-summary="All" class="text-danger" role="alert"></div>
+         
+            <div class="form-floating mb-3 text-theme input-box">
+                <input asp-for="Input.NewEmail" class="form-control bgColor inputFeatures text-theme" autocomplete="email" aria-required="true" placeholder="Proszę wprowadzić nowy adres e-mail." />
+                <label asp-for="Input.NewEmail" class="form-label text-theme">Nowy email</label>
+                <span asp-validation-for="Input.NewEmail" class="text-danger"></span>
+            </div>
+            <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail" class="w-100 btn btn-lg btn-primary text-theme myButton manageButtonsBg textAccoutnsBtn">Zmień adres e-mail</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,570 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    min-height: 100%;
+}
+
+
+.gradient {
+    /* background: rgb(28,18,182);
+    background: linear-gradient(90deg, rgba(28,18,182,1) 41%, rgba(28,98,244,1) 88%); */
+    background: rgb(14,8,115);
+    background: linear-gradient(90deg, rgba(14,8,115,1) 41%, rgba(5,18,46,1) 88%);
+}
+
+.page-header {
+    margin-top: 4rem;
+    font-size: 1.25rem;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature {
+    color: #fff;
+}
+
+    .feature ul {
+        padding-left: 2rem;
+        list-style-type: none;
+    }
+
+        .feature ul li {
+            padding-left: 2rem;
+            background-image: url(../img/check.svg);
+            background-repeat: no-repeat;
+            margin: 1rem 0;
+            line-height: 1.5rem;
+        }
+
+.icon {
+    color: #fff;
+    height: 5rem;
+    width: 5rem;
+    font-size: 2rem;
+    border-radius: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery {
+    background-color: whitesmoke;
+}
+
+    .gallery img {
+        border-radius: 5%;
+    }
+
+.services {
+    color: #fff;
+}
+
+    .services h1 {
+        margin-bottom: 1.5rem;
+    }
+
+
+.footer-theme {
+    color: white;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    position: inherit;
+    
+}
+a {
+    text-decoration: none;
+}
+
+.registrationBtn {
+    color: aliceblue;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background: rgb(28,18,182);
+    background: linear-gradient(90deg, rgba(28,18,182,1) 41%, rgba(28,98,244,1) 88%);
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s;
+    margin-bottom: 5%;
+}
+
+
+/* Animacje */
+
+.revealY {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1.5s ease-out;
+}
+
+    .revealY.active {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+.revealX {
+    position: relative;
+    transform: translateX(150px);
+    opacity: 0;
+    transition: all 1.5s ease-in;
+}
+
+    .revealX.transition-right {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+/* Animacja z lewej */
+
+.revealsXFromLeft {
+    position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: all 1.5s ease-in;
+}
+
+    .revealsXFromLeft.transition-left {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+.navbar-theme {
+    background-color: #02010A;
+    text-decoration-color: white;
+    color: white;
+    border-bottom: #02010A solid 1px;
+}
+
+.text-navbar-theme {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    height: 40px;
+    white-space: nowrap;
+    justify-self: center;
+}
+
+    .text-navbar-theme:hover {
+        color: white;
+        transform: translateY(-2px);
+        transition: transform 330ms ease-in-out;
+    }
+
+.light-theme {
+    background-color: #04052E;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    height: 100%;
+}
+
+.card-div-theme {
+    background-color: #02010A;
+    border: white solid 1px;
+    transition: transform 0.3s;
+    font-size: 30px !important;
+    border: 2px solid #333333;
+    font-weight: bolder;
+}
+
+    .card-div-theme:hover {
+        transform: scale(1.05);
+        border: white solid 1px;
+    }
+
+.card-body {
+    background-color: #02010A;
+    color: white;
+}
+.card-div-theme-item {
+    background-color: #02010A;
+    border: 2px solid white;
+}
+
+.card-title {
+    margin-top: 5%;
+}
+
+.theme-btn-theme {
+    justify-self: center;
+    align-self: center;
+    border: none;
+    background-color: transparent;
+    place-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.card-btn-theme {
+    background-color: #11004A;
+    font-size: 17px !important;
+    transition: background-color 0.2s, transform 0.2s, background-color 0.2s !important;
+    border: 2px solid #333333 !important;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    word-wrap: normal;
+    margin: 5px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    line-height: 40px;
+    height: fit-content;
+    color: white;
+}
+
+    .card-btn-theme:hover {
+        transform: scale(1.05) !important;
+        border: 2px solid rgba(245, 245, 245, 0.61) !important;
+        background-color: #04052E;
+    }
+
+.special-btn-theme {
+    text-decoration: none;
+    border: white solid 1px;
+    font-size: 16px !important;
+    background-color: #02010A;
+    color: white;
+    font-weight: bolder;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    .special-btn-theme:hover {
+        background-color: black;
+        border: white solid 1px;
+        transform: scale(1.05);
+    }
+
+.light-text {
+    font-weight: bolder !important;
+    font-size: 34px !important;
+    color: white !important;
+    margin: 15px 0 !important;
+}
+
+.light-text-smaller {
+    font-weight: bolder !important;
+    font-size: 27px !important;
+    color: white !important;
+    margin: 15px 0 !important;
+}
+
+.camera-students {
+    border: 2px white solid;
+    border-radius: 10px;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+    width: fit-content;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.53);
+}
+
+.take-snapshot-btn {
+    margin-top: 5px;
+    text-decoration: none;
+    border: none;
+    font-size: 16px !important;
+    background-color: #18122B;
+    color: white;
+    font-weight: bolder;
+}
+
+    .take-snapshot-btn:hover {
+        background-color: #362f57;
+    }
+
+.camera-main {
+    border: 4px solid white;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    padding: 0;
+    margin: 4px;
+    gap: 5px;
+    width: fit-content
+}
+
+/*DAMIAN SECTION*/
+
+.secPresent {
+    color: lawngreen;
+    font-weight: bold;
+}
+
+.secAbsent {
+    color: orangered;
+    font-weight: bold;
+}
+
+.belated {
+    color: darkgoldenrod;
+    font-weight: bold;
+}
+
+.white-text {
+    color: white !important;
+}
+
+.bgColor {
+    background-color: #18122B !important;
+}
+
+.bgGradient {
+    background: rgb(57,48,83);
+    background: linear-gradient(90deg, rgba(57,48,83,1) 0%, rgba(24,18,43,1) 50%);
+    box-shadow: 0 0 40px rgba(35,0,106,1);
+}
+
+.inputFeatures {
+    border-radius: 40px;
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border: 1px solid whitesmoke;
+}
+
+.input-box {
+    position: relative;
+}
+
+    .input-box input {
+        padding-left: 30px;
+    }
+
+.borderLight {
+    border: 2px dashed whitesmoke;
+    border-radius: 25px;
+    padding: 30px 40px;
+}
+
+.borderManageOptions {
+    border: solid 1px lightgrey;
+    padding: 5px 8px;
+}
+
+.textAlign h3 {
+    text-align: center;
+}
+
+.manageButtonsBg {
+    background: rgb(39, 0, 93) !important;
+}
+
+.myButton {
+    border-radius: 40px !important;
+    padding: 8px !important;
+    margin: 15px 0 !important;
+}
+
+.input-box input ~ label.form-label::after {
+    background: transparent !important;
+}
+
+.input-box input:focus ~ label.form-label,
+.input-box input:focus ~ label.form-label::after {
+    background: transparent;
+    font-size: 15px;
+}
+/*.input-box input:focus {
+    background-color: transparent;
+    outline: none;
+}*/
+.loginSection h1 {
+    text-align: center;
+}
+
+.input-box i {
+    box-sizing: border-box;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+.border-editstudentimage {
+    border: 5px solid rgba(0, 154, 255, 1);
+    width: fit-content;
+}
+
+.btn-editstudentimage{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.hidden-editstudentimage {
+    display: none;
+}
+/*DAMIAN SECTION*/
+
+:root {
+    --manageButtonsGradient: linear-gradient( 45deg, #001233, #001845, #000814, #3F0071 );
+    --clr-neon: #4942E4;
+    /*hsl(317 100% 54%) */
+    --clr-bg: transparent;
+    /*hsl(323 21% 16%)*/
+    --clr-font: lightgrey;
+}
+
+
+/*NEONBUTTON*/
+
+.neonButton {
+    --clr-neon: #4942E4;
+    --clr-bg: #150050;
+    --clr-font: lightgrey;
+}
+
+.manageButtonsGradient.manageButtonsGradient.active {
+    --manageButtonsGradient: linear-gradient( 45deg, #001233, #001845, #000814, #3F0071);
+}
+
+.neonButton {
+    font-size: 1.25rem !important;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 4px solid;
+    padding: 0.4em 1.1em !important;
+    border-radius: 2em !important;
+    background: var(--clr-bg) !important;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.2), 0 0 0.125em currentColor !important;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em var(--clr-neon) !important;
+    position: relative;
+}
+
+    .neonButton::before {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        background: var(--clr-neon);
+        top: 107%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 2em !important;
+        transform: perspective(2em) rotateX(40deg) scale(1, 0.35);
+        filter: blur(2em);
+        opacity: 0.6;
+    }
+
+    .neonButton::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 2em !important;
+        background: var(--clr-neon);
+        z-index: -1;
+        box-shadow: 0 0 1.3em 0.35em var(--clr-neon);
+        opacity: 0;
+        transition: opacity 150ms linear;
+    }
+
+    .neonButton:hover::after,
+    .neonButton:focus::after {
+        opacity: 1;
+    }
+
+    .neonButton:hover::before,
+    .neonButton:focus::before {
+        opacity: 1;
+    }
+
+    .neonButton:hover,
+    .neonButton:focus {footer-text-mod
+        background: var(--clr-neon);
+        color: var(--clr-font);
+        text-shadow: none;
+    }
+
+
+/*.active-dark {
+    background: 
+}*/
+
+
+
+.text-color {
+    color: white !important;
+}
+
+.text-priv {
+    color: grey !important;
+}
+
+.bgColor {
+    background-color: #18122B !important;
+}
+
+.bgGradient {
+    /*    background: rgb(57,48,83);
+    background: linear-gradient(90deg, rgba(57,48,83,1) 0%, rgba(24,18,43,1) 50%);*/
+    background: #02010A;
+    box-shadow: 0 0 40px rgba(35,0,106,1);
+}
+
+
+
+.border {
+    border: 2px solid whitesmoke !important;
+    border-radius: 25px;
+    padding: 30px 40px;
+}
+
+.borderManageOptions {
+    border: solid 1px lightgrey;
+    padding: 5px 8px;
+}
+
+.manageButtonsBg {
+    background: rgb(39, 0, 93) !important;
+}
+
+
+.border-editstudentimage {
+    border: 5px solid rgba(0, 154, 255, 1);
+    width: fit-content;
+}
+
+
+.btn-editstudentimage {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.hidden-editstudentimage {
+    display: none;
+}
+
+.text {
+    /*font-weight: bolder !important;*/
+    font-size: 20px;
+    color: white !important;
+    /*margin: 15px 0 !important;*/
+}
+.text-theme {
+    color: white !important;
+}
+
+.custom-toggler {
+    background: black !important;
+}

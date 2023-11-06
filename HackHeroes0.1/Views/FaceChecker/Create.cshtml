@@ -1,0 +1,33 @@
+﻿@model HackHeroes.Application.HackHeroes.Commands.Classes.CreateClass.CreateClassCommand
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-theme" style="font-size: 25px;">Utwórz</h1>
+
+<h4 class="text-theme" style="font-size: 25px;">Panel tworzenia klas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label mb-2 text-theme" style="font-size: 23px;">Nazwa klasy</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="btn-group">
+                    <input type="submit" value="Utwórz" class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme" />
+                    <a asp-action="ClassIndex" class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme" style="white-space: nowrap;">Powrót</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,111 @@
+﻿@model HackHeroes.Application.HackHeroes.Commands.Students.EditStudentImage.EditStudentImageCommand
+
+@{
+    ViewData["Title"] = "EditStudentImage";
+}
+
+<h1 class="text">Zmiana zdjęcia ucznia</h1>
+
+<h4 class="text-theme">Włącz kamerkę, naciśnij przycisk poniżej i wykonaj zdjęcie dla danego ucznia.</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+    </div>
+</div>
+
+
+<br />
+<div class="col-md-2"></div>
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading info-editstudentimage">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 18 18">
+                <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z" />
+            </svg>
+            Kamera
+        </div>
+        <div class="panel-body">
+            <div >
+                <div id="my_camera" class="border-makeStudentPhoto" style="display: flex; justify-content: center;"> </div>
+            </div>
+            <form>
+                <input type="button" id="showButton" class="btn btn-success btn-editstudentimage card-btn-theme" value="Zrób zdjęcie" onclick="showImagePanel()" />
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="imagePanel" class="col-md-4" style="display: none;">
+    <div class="panel panel-default">
+        <div class="panel-heading info-editstudentimage">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 18 18">
+                <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+            </svg>
+            Wykonane Zdjęcie
+        </div>
+        <div class="panel-body">
+            <div id="results" class="border-editstudentimage"></div>
+        </div>
+        <br />
+        <br />
+    </div>
+</div>
+<div class="col-md-2"></div>
+<script>
+    function showImagePanel() {
+        const imagePanel = document.getElementById('imagePanel');
+        imagePanel.style.display = 'block';
+        take_snapshot();
+    }
+</script>
+
+<script src="~/js/Webcam.js/webcam.js"></script>
+<script language="JavaScript">
+    // Ustal domyślną szerokość i wysokość
+    let width = 562;
+    let height = 350;
+
+    // Jeśli szerokość ekranu jest mniejsza lub równa 768px, zakładamy, że to urządzenie mobilne
+    if (window.innerWidth <= 768) {
+        width = 300;
+        height = 250;
+    }
+
+    Webcam.set({
+        width: width,
+        height: height,
+        image_format: 'jpeg',
+        jpeg_quality: 100
+    });
+    console.log(width);
+    console.log(height);
+    Webcam.attach('#my_camera');
+</script>
+<script language="JavaScript">
+    function take_snapshot() {
+        Webcam.snap(function (data_uri) {
+            document.getElementById('results').innerHTML = '<img src="' +
+                data_uri +
+                '"/>';
+            Webcam.upload(data_uri,
+                '',
+                function (code, text) {
+                    alert('Photo Captured');
+                });
+        });
+    }
+    
+
+</script>
+
+<div class="btn-group">
+    <a asp-controller="FaceChecker" asp-action="ClassIndex" class="btn btn-primary btn card-btn-theme btn-theme">Powrót</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

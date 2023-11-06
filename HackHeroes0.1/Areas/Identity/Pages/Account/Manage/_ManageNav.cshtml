@@ -1,0 +1,15 @@
+﻿@inject SignInManager<IdentityUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item" style="text-align: center;"><a class="nav-link textColor white-text borderManageOptions borderManageOptions @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">Profil</a></li>
+    <li class="nav-item" style="text-align: center;"><a class="nav-link textColor white-text borderManageOptions borderManageOptions @ManageNavPages.EmailNavClass(ViewContext)" id="email" asp-page="./Email">Email</a></li>
+    <li class="nav-item" style="text-align: center;"><a class="nav-link textColor white-text borderManageOptions borderManageOptions @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">Hasło</a></li>
+    @if (hasExternalLogins)
+    {
+        <li id="external-logins" class="nav-item textColor white-text" style="text-align: center;"><a id="external-login" class="nav-link textColor white-text @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">Logowania zewnętrzne</a></li>
+    }
+    <li class="nav-item" style="text-align: center;"><a class="nav-link textColor white-text borderManageOptions borderManageOptions @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" id="two-factor" asp-page="./TwoFactorAuthentication">Uwierzytelnianie dwuskładnikowe</a></li>
+    <li class="nav-item textColor white-text" style="text-align: center;"><a class="nav-link textColor white-text borderManageOptions borderManageOptions @ManageNavPages.PersonalDataNavClass(ViewContext)" id="personal-data" asp-page="./PersonalData">Dane osobiste</a></li>
+</ul>

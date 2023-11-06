@@ -1,0 +1,26 @@
+﻿@model HackHeroes.Application.HackHeroes.Commands.Students.DeleteStudent.DeleteStudentCommand
+
+
+<div>
+    <!-- Modal -->
+    <div class="modal fade del-student-screen" id="deleteStudentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form asp-action="DeleteStudent">
+                    <div class="modal-header del-student-head">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Jesteś pewny?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-footer del-student-footer">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme" data-bs-dismiss="modal">Nie</button>
+                            <input type="submit" value="Tak" data-bs-dismiss="modal" class="btn btn-primary card-del-btn" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

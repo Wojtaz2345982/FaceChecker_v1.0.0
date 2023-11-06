@@ -1,0 +1,172 @@
+﻿@model HackHeroes0._1.Models.ViewModels.StartLessonViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<h1 class="text-theme">Szczegóły</h1>
+<div>
+    <hr class="text" />
+    <dl class="row">
+        <dt class="col-sm-2 text">
+            Temat:
+        </dt>
+        <hr class="text" />
+        <dd class="col-sm-10 text-theme" style="font-size: 15px;">
+            @Html.DisplayFor(model => model.Lesson.Class!.Name)
+        </dd>
+
+    </dl>
+    <ul style="list-style-type: none; padding-left: 0;">
+        @foreach (var student in Model.Lesson.Class!.Students)
+        {
+            <li data-key="@student.StudentKey">@student.FirstName @student.LastName</li>
+        }
+
+    </ul>
+</div>
+
+<p>
+    <partial name="_IntruderView" />
+</p>
+
+<div class="row justify-content-md-between justify-content-lg-start">
+    <div class="col-md-6 justify-content-center" style="position: relative;">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3 class="info-makeStudentPhoto" style="margin-bottom: 0;">Kamera</h3>
+                <div id="my_camera" class="border-makeStudentPhoto" style="display: flex; justify-content: center;"></div>
+                <form style="text-align: start;">
+                    <input id="takeSnapshot" type="button" class="btn btn-success sub-btn card-btn btn-theme card-btn-theme mt-2 cooldown" style="width: 150px; margin-left: 0;" value="Spóźnienie" onclick="take_snapshotLate()" />
+                    <a asp-action="ClassIndex" class="btn btn-primary sub-btn card-btn btn-theme card-btn-theme mt-2" style="margin-left: 0; width: 100px;">Powrót</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4 ps-md-5 ps-lg-3 ps-xl-0 d-none d-md-block mt-5 pt-5 pt-sm-0 mt-sm-0" style="position: relative;">
+        <span class="text-color" id="countdown" style="font-size: 6em; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" data-encodedLesson="@Model.Lesson.EncodedLesson"></span>
+    </div>
+</div>
+
+<script src="~/js/Webcam.js/webcam.js"></script>
+<script src="~/js/HackHeroes/StartLekcji.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script language="JavaScript">
+    // Ustal domyślną szerokość i wysokość
+    let width = 562;
+    let height = 350;
+
+    // Jeśli szerokość ekranu jest mniejsza lub równa 768px, zakładamy, że to urządzenie mobilne
+    if (window.innerWidth <= 768) {
+        width = 300;
+        height = 225;
+    }
+
+
+
+    Webcam.set({
+        width: width,
+        height: height,
+        image_format: 'jpeg',
+        jpeg_quality: 100
+    });
+    console.log(width);
+    console.log(height);
+    Webcam.attach('#my_camera');
+</script>
+<script language="JavaScript">
+
+    const countdownElement1 = document.getElementById("countdown");
+    const encodedLesson3 = countdownElement1.getAttribute('data-encodedLesson');
+
+    function take_snapshot() {
+        Webcam.snap(function (data_uri) {
+            Webcam.upload(data_uri,
+                '',
+                function (code, text) {
+
+                });
+        });
+    }
+
+
+
+    function take_snapshotLate() {
+
+        var button = document.getElementById('takeSnapshot');
+        button.disabled = true;
+        for (let i = 0; i < 2; i++) {
+            setTimeout(function () {
+                Webcam.snap(function (data_uri) {
+                    Webcam.upload(data_uri,
+                        `/FaceChecker/${encodedLesson3}/LateStudent`,
+                        function (code, text) {
+
+                        });
+                });
+            }, 100 * i);
+        }
+        fetchAttendanceWithAjax();
+
+        setTimeout(function () {
+            button.disabled = false;
+        }, 1000);
+    }
+
+
+
+
+    function removeDNoneFromSnapshot() {
+        $('#takeSnapshot').removeClass('d-none');
+    };
+
+    let counter = 0;
+    const limit = 300; // ilość sekund
+
+    const intervalId = setInterval(function () {
+        take_snapshot();
+
+        counter++;
+        if (counter >= limit) {
+            clearInterval(intervalId);
+            removeDNoneFromSnapshot();
+        }
+    }, 1000);
+</script>
+
+<style>
+    .present {
+        background-color: green;
+        padding: 3px 5px;
+        border-radius: 5px;
+        border: 1.5px solid black;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 2px;
+        position: relative;
+    }
+
+    .absent {
+        background-color: red;
+        padding: 5px 8px;
+        border-radius: 5px;
+        border: 1.5px solid black;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 2px;
+        position: relative;
+    }
+
+    .late {
+        background-color: yellow;
+        padding: 5px 8px;
+        border-radius: 5px;
+        border: 1.5px solid black;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 2px;
+        position: relative;
+    }
+</style>

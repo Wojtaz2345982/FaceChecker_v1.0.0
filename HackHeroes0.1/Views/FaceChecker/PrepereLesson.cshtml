@@ -1,0 +1,36 @@
+﻿@model HackHeroes.Application.HackHeroes.LessonDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-theme">Szczegóły</h1>
+
+<div>
+    <hr class="text-theme" />
+    <dl class="row">
+        <dt class="col-sm-2 text-bigger text-theme">
+            Temat:
+        </dt>
+
+        <dd class="col-sm-10 text-bigger text-theme">
+            @Html.DisplayFor(model => model.Topic)
+        </dd>
+
+    </dl>
+    <hr class="text-theme" />
+    <h5 class="text-theme">Uczniowie:</h5>
+    <ul>
+        @foreach (var student in Model.Class!.Students)
+        {
+
+            <Li class="text-theme text-medium">@student.FirstName @student.LastName</Li>
+            
+        }
+
+    </ul>
+</div>
+<div class="btn-group">
+    <a asp-action="StartLesson" asp-route-encodedLesson="@Model.EncodedLesson" class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme">Start</a>
+    <a asp-action="LessonsIndex" class="btn btn-primary btn btn-theme btn btn-primary sub-btn card-btn btn-theme card-btn-theme" style="white-space: nowrap;">Powrót</a>
+</div>

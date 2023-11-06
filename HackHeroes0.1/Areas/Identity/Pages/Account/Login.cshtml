@@ -1,0 +1,85 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Zaloguj się";
+}
+
+@* <h1 class="textColor white-text">@ViewData["Title"]</h1> *@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-7 col-lg-6 col-xl-5 text-color borderStyle bgGradient border">
+        <section class="loginSection textColor white-text">
+            <h1 class="textColor white-text">@ViewData["Title"]</h1>
+            <form id="account" method="post">
+@*                 <h2 class="textColor">Aby się zalogować, użyj konta lokalnego.</h2> *@
+                <hr class="textColor white-text"/>
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3 textColor input-box white-text">
+                    <i class="bi bi-person-fill textColor white-text"></i>
+                    <input asp-for="Input.Email" class="form-control bgColor bgColor inputFeatures textColor white-text" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                        <label asp-for="Input.Password" class="form-label textColor white-text">Email</label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                
+                <div class="form-floating mb-3 textColor input-box white-text">
+                    <input asp-for="Input.Password" class="form-control bgColor bgColor inputFeatures textColor white-text" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <i class="bi bi-lock-fill textColor white-text"></i>
+                    <label asp-for="Input.Password" class="form-label textColor white-text">Hasło</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        Zapamiętaj mnie
+                    </label>
+                </div>
+                <div style="text-align: center;" class="mb-4">
+                    <button id="login-submit" type="submit" class="w-50 btn btn-lg btn-primary neonButton">Zaloguj</button>
+                </div>
+                <div>              
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Zarejestruj się jako nowy użytkownik</a>
+                    </p>
+                   
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+    @* <div class="col-md-5 col-md-offset-2 ms-md-4">
+        <section>
+            <h3 class="textColor white-text">Aby się zalogować, użyj innej usługi.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p class="textColor white-text">
+                            Nie skonfigurowano żadnych zewnętrznych usług uwierzytelniania. Zobacz <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                artykuł
+                                o konfigurowaniu tej aplikacji ASP.NET do obsługi logowania za pośrednictwem usług zewnętrznych
+                            </a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div> *@
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

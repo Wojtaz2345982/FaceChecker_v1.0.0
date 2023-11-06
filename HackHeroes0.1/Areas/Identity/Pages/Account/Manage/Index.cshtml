@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profil";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+@* <h3 class="text-theme">@ViewData["Title"]</h3>  *@
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="col-md-10 col-lg-8 col-xl-7 borderStyle border mt-3 bgGradient textAlign">
+
+        <h3 class="text-theme">@ViewData["Title"]</h3>
+
+        <hr class="text-theme" />
+        <form id="profile-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-4 text-theme input-box">
+                <input asp-for="Username" class="form-control bgColor bgColor inputFeatures text-theme" placeholder="Proszę wybrać swoją nazwę użytkownika." disabled />
+                <label asp-for="Username" class="form-label text-theme">Użytkownik</label>
+            </div>
+
+            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary text-theme myButton manageButtonsBg textAccoutnsBtn">Zapisz</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

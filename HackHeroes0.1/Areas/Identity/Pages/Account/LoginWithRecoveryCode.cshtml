@@ -1,0 +1,29 @@
+﻿@page
+@model LoginWithRecoveryCodeModel
+@{
+    ViewData["Title"] = "Weryfikacja kodu odzyskiwania";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<p>
+    Zażądałeś zalogowania się przy użyciu kodu odzyskiwania. Ten login nie zostanie zapamiętany, dopóki go nie podasz
+    kod aplikacji uwierzytelniającej przy logowaniu lub wyłącz 2FA i zaloguj się ponownie.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.RecoveryCode" class="form-control" autocomplete="off" placeholder="RecoveryCode" />
+                <label asp-for="Input.RecoveryCode" class="form-label"></label>
+                <span asp-validation-for="Input.RecoveryCode" class="text-danger"></span>
+            </div>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Zaloguj się</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

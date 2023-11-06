@@ -1,0 +1,31 @@
+﻿@model HackHeroes.Application.HackHeroes.ClassDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-theme font-weight-normal">Szczegóły</h1>
+
+<div>
+    <hr class="text-theme" />
+    <dl class="row">
+        <dt class="col-sm-2 text-theme" style="font-size: 26px;">
+            Nazwa
+        </dt>
+        <dd class="col-sm-10 text-theme" style="font-size: 26px;">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+    <ul>
+        @foreach (var student in Model.Students)
+        {
+            <Li class="text-theme" style="font-size: 18px;">@student.FirstName @student.LastName</Li>
+        }
+
+    </ul>
+</div>
+<div class="btn-group">
+    <a asp-controller="FaceChecker" asp-action="Edit" asp-route-encodedName="@Model.EncodedName" asp class="btn btn-primary sub-btn card-btn btn-theme card-btn-theme">Edytuj</a>
+    <a asp-action="ClassIndex" class="btn btn-primary sub-btn card-btn btn-theme card-btn-theme" style="white-space: nowrap;">Powrót</a>
+</div>

@@ -1,0 +1,206 @@
+﻿/*html, body {
+    height: 100%;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    height: 100%;
+}*/
+
+.gradient {
+    background: rgb(28,18,182);
+    background: linear-gradient(90deg, rgba(28,18,182,1) 41%, rgba(28,98,244,1) 88%);
+    background: rgb(14,8,115);
+    background: linear-gradient(90deg, rgba(14,8,115,1) 41%, rgba(5,18,46,1) 88%);
+}
+
+.index-page-header {
+    margin: 0px;
+    font-size: 1.25rem;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+.index-page-header h2, p {
+    color: #fff;
+}
+
+.loginBtn {
+    color: aliceblue;
+    transition: all 0.3s;
+}
+
+    .loginBtn:hover {
+        color: black;
+    }
+
+.icon {
+    color: #fff;
+    height: 5rem;
+    width: 5rem;
+    font-size: 2rem;
+    border-radius: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services {
+    color: #fff;
+}
+
+    .services h1 {
+        margin-bottom: 1.5rem;
+        color: #fff;
+    }
+
+.working {
+    background-color: whitesmoke;
+    color: #000;
+}
+
+    .working h1 {
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+    .working p {
+        color: #000;
+    }
+.description p {
+    color: #000;
+}
+
+/*footer {
+    color: #fff;
+    padding: 0px;
+}*/
+/*.mb-3::before {
+    content: "\F4D5";
+    font-family: "Bootstrap Icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}*/
+
+a {
+    text-decoration: none;
+}
+
+/*#footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding: 20px;
+}*/
+
+.registrationBtn {
+    z-index: 100000;
+    color: aliceblue;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background: rgb(28,18,182);
+    background: linear-gradient(90deg, rgba(28,18,182,1) 41%, rgba(28,98,244,1) 88%);
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+    .registrationBtn:hover {
+        transform: translateY(-3px);
+        background: whitesmoke;
+        color: rgb(28,18,182);
+        color: linear-gradient(90deg, rgba(28,18,182,1) 41%, rgba(28,98,244,1) 88%);
+    }
+
+.img-with-shadow {
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+/*Animacje*/ 
+
+.revealY {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1.5s ease-out;
+}
+
+    .revealY.active {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+.revealX {
+    position: relative;
+    transform: translateX(150px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+    .revealX.transition-right {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+/*Animacja z lewej*/ 
+
+.revealsXFromLeft {
+    position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+    .revealsXFromLeft.transition-left {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+/*Opacity Reveal*/
+
+.opacityReveal {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+    .opacityReveal.revealDelayShort {
+        transition-delay: 1.5s;
+    }
+
+    .opacityReveal.revealDelayLong {
+        transition-delay: 3s;
+    }
+
+    .opacityReveal.revealDelayFirst {
+        transition-delay: 0.8s;
+    }
+
+    .opacityReveal.revealDelaySecond {
+        transition-delay: 2.3s;
+    }
+
+    .opacityReveal.revealDelayThird {
+        transition-delay: 3.8s;
+    }
+
+    .opacityReveal.Reveal {
+        opacity: 1;
+    }
+
+/*Rotacja*/
+
+.rotate {
+    transform: rotate(480deg);
+    opacity: 0;
+    transition: transform 2s, opacity 0.8s;
+}
+    
+    .rotate.startPosition {
+        transform: rotate(0);
+        opacity: 1;
+    }
