@@ -140,7 +140,8 @@ Aby wykorzystać pakiet w projekcie, można dodać konfigurację w Program.cs ja
 
 ## Biblioteki Javascript użyte w naszej aplikacji:
 - toastr.js - komunikaty w aplikacji,
-- Webcam.js - obsługa kamery internetowej na stronie,
+- Webcam.js - obsługa kamery internetowej na stronie
+
 -JQuery
 
 
