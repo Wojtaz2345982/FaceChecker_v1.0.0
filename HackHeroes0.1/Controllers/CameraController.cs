@@ -232,10 +232,9 @@ namespace HackHeroes0._1.Controllers
         private async Task SendToAiApi(byte[] imageBytes, List<Student> studentsList, Lesson lesson, IAttendanceRepository repository, bool isLate)
         {
 
-            await Console.Out.WriteLineAsync("Wyslano zapytanie");
 
             string base64String = Convert.ToBase64String(imageBytes, 0, imageBytes.Length);
-            //Console.WriteLine(base64String);
+
 
             var request = new ApiRequest()
             {
@@ -243,10 +242,7 @@ namespace HackHeroes0._1.Controllers
                 image = base64String
             };
 
-         
-
-            await Console.Out.WriteLineAsync(request.klasa);
-            await Console.Out.WriteLineAsync(JsonConvert.SerializeObject(request));
+        
 
             var postResult = await "Adres do API"
                  .WithHeaders(new
