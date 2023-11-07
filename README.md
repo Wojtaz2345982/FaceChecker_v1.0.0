@@ -9,8 +9,8 @@ Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności u
 
 Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i implementuje architekturę CQRS (Command Query Responsibility Segregation). Niezbędne API znajduje się w dołączonym do repozytorium folderze `API`.
 
-##Aby rozpocząć działanie z naszą apliakcją niezbędny jest adres API który w tym repozytorium jest ukryty ze względów bezpieczeństwa.
-##Jeżeli chciałbyś przetestować aplikację napisz do nas na email: faceckecker1@gmail.com, udostępnimy dostęp do API
+## Aby rozpocząć działanie z naszą apliakcją niezbędny jest adres API który w tym repozytorium jest ukryty ze względów bezpieczeństwa.
+## Jeżeli chciałbyś przetestować aplikację napisz do nas na email: faceckecker1@gmail.com, udostępnimy dostęp do API
 
 ## 📋 Wymagania systemowe
 
