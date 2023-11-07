@@ -12,6 +12,9 @@
         <dt class="col-sm-2 text">
             Temat:
         </dt>
+         <dd class="col-sm-10 text-theme" style="font-size: 22px;">
+             @Html.DisplayFor(model => model.Lesson.Topic)
+         </dd>
         <hr class="text" />
         <dd class="col-sm-10 text-theme" style="font-size: 15px;">
             @Html.DisplayFor(model => model.Lesson.Class!.Name)
