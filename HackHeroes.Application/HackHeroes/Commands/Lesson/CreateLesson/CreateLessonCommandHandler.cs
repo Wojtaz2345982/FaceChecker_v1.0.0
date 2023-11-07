@@ -30,6 +30,10 @@ namespace HackHeroes.Application.HackHeroes.Lesson.CreateLesson
         public async Task Handle(CreateLessonCommand request, CancellationToken cancellationToken)
         {
             var @class = await _classRepository.GetClassbyEncodedName(request.ClassEncodedName!);
+            if(@class == null)
+            {
+                return;
+            }
              var lesson = _mapper.Map<Domain.Entities.Lesson>(request);
             lesson.Date = DateTime.Now;
             lesson.EncodeLesson();

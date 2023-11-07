@@ -145,5 +145,5 @@ def recognize_faces():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, threaded=True,
+    app.run(host='0.0.0.0', port=5000, debug=True, threaded=True,
             ssl_context=('/home/mati7v2/fullchain.pem', '/home/mati7v2/privkey.pem'))

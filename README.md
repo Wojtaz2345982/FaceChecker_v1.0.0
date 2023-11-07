@@ -1,16 +1,12 @@
 # FACECHECKER - Automatyzacja sprawdzania obecności
-# https://facechecker.duckdns.org
 
 ## 🎯 Cel
 
-Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności uczniów oraz nauczycieli, zwiększenie efektywności wykorzystania czasu lekcyjnego oraz eliminacja potencjalnych oszustw związanych z obecnością na zajęciach. Aplikacja rozpoznaję twarzę uczniów wchodzących do klasy i wykonuję odpowiednie działania w zależności od rozpoznanej twarzy.
+Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności uczniów oraz nauczycieli, zwiększenie efektywności wykorzystania czasu lekcyjnego oraz eliminacja potencjalnych oszustw związanych z obecnością na zajęciach.
 
 ## 🔨 Technologie i pakiety
 
 Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i implementuje architekturę CQRS (Command Query Responsibility Segregation). Niezbędne API znajduje się w dołączonym do repozytorium folderze `API`.
-
-## Aby rozpocząć działanie z naszą apliakcją niezbędny jest adres API który w tym repozytorium jest ukryty ze względów bezpieczeństwa.
-## Jeżeli chciałbyś przetestować aplikację napisz do nas na email: faceckecker1@gmail.com, udostępnimy dostęp do API
 
 ## 📋 Wymagania systemowe
 
@@ -21,7 +17,6 @@ Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i im
   - SQL Server: Dla przechowywania danych.
 
 ## 💿 Instalacja
-
 
 ### Wymagane oprogramowanie:
 
@@ -37,12 +32,7 @@ Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i im
 3. Zainstaluj Entity Framework Core Tools:
    ```bash
    dotnet tool install --global dotnet-ef
-Skonfiguruj połączenie z SQL Server (Po zainstalowaniu odpowiednich paczek NuGet): 
-W pliku appsettings.json w sekcji connection strings zamiast "Connection string do bazy danych" umieść connection string do swojej bazy danych.
-Następnie w konsoli pakietów NuGet wykonaj: 
-  ```bash
-  Update-Database
-  ```
+Skonfiguruj połączenie z SQL Server.
 📦 Pakiety NuGet:
   Instalacja w konsoli pakietów nuGet:
    ```bash
@@ -136,28 +126,24 @@ Aby wykorzystać pakiet w projekcie, można dodać konfigurację w Program.cs ja
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-## ✨ Funkcjonalności
-- Utworzenie i zarządzanie kontami przez nauczycieli.
-- Tworzenie klas i zarządzanie nimi.
-- Dodawanie ucziów do klasy i zarządzanie nimi.
-- Dodawanie zdjęć uczniów do bazy danych dla ich rozpoznawania twarzy.
-- Planowanie i uruchamianie lekcji.
-- Rozpoznawanie obecności uczniów.
-- Identyfikowanie przez kamerę intruzów wchodzących do klasy .
-- Apliakcja zarejestruje również osoby spóźnione
-- Szczegółowe raporty obecności.
-
-## 📖 Dokumentacja API
+✨ Funkcjonalności
+Utworzenie i zarządzanie kontami przez nauczycieli.
+Tworzenie klas i zarządzanie uczniami.
+Dodawanie zdjęć uczniów do bazy danych dla rozpoznawania twarzy.
+Planowanie i uruchamianie lekcji.
+Rozpoznawanie obecności i intruzów przez kamery.
+Szczegółowe raporty obecności.
+📖 Dokumentacja API
 Zapoznaj się z folderem API dla szczegółowych informacji o konfiguracji i użytkowaniu API rozpoznającego twarze.
 
-## 🙌 Współpraca
+🙌 Współpraca
 Zachęcamy do zgłaszania Issue oraz Pull Requestów w celu wspólnego rozwoju projektu.
 
-## 👤 Autorzy
+👤 Autorzy
 Zespół FACECHECKER – Tworzymy z pasją, aby ułatwić życie szkolne.
 
-## Kontakt: 
+Kontakt: 
 email - facechecker1@gmail.com
 
-## 📄 Licencja
+📄 Licencja
 Projekt jest udostępniany na licencji MIT.

@@ -1,4 +1,4 @@
-﻿namespace HackHeroes.Domain.Services
+﻿namespace FaceChecker.Domain.Services
 {
     public class CurrentUser
     {

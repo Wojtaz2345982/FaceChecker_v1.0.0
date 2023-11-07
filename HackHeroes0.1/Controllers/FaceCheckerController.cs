@@ -361,7 +361,7 @@ namespace HackHeroes0._1.Controllers
             var model = new ClassRequest(dto.Class.EncodedName!);
             await Console.Out.WriteLineAsync(JsonConvert.SerializeObject(model).ToString());
 
-            var postResult = await "Adres serwera API"
+            var postResult = await "Adres do API"
                 .WithHeaders(new
                 {
                     Content_Type = "application/json",

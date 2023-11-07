@@ -38,7 +38,7 @@
                 <h3 class="info-makeStudentPhoto" style="margin-bottom: 0;">Kamera</h3>
                 <div id="my_camera" class="border-makeStudentPhoto" style="display: flex; justify-content: center;"></div>
                 <form style="text-align: start;">
-                    <input id="takeSnapshot" type="button" class="btn btn-success sub-btn card-btn btn-theme card-btn-theme mt-2 cooldown" style="width: 150px; margin-left: 0;" value="Spóźnienie" onclick="take_snapshotLate()" />
+                    <input id="takeSnapshot" type="button" class="btn btn-success sub-btn card-btn btn-theme card-btn-theme mt-2 cooldown d-none" style="width: 150px; margin-left: 0;" value="Spóźnienie" onclick="take_snapshotLate()" />
                     <a asp-action="ClassIndex" class="btn btn-primary sub-btn card-btn btn-theme card-btn-theme mt-2" style="margin-left: 0; width: 100px;">Powrót</a>
                 </form>
             </div>
@@ -106,7 +106,7 @@
 
                         });
                 });
-            }, 100 * i);
+            }, 500 * i);
         }
         fetchAttendanceWithAjax();
 
