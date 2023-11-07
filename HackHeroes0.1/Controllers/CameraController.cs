@@ -102,12 +102,12 @@ namespace HackHeroes0._1.Controllers
                         
                     }
 
-                    return RedirectToAction("Index", "HackHeroes");
+                    return RedirectToAction("Index", "FaceChecker");
 
                 }
                 else
                 {
-                   return RedirectToAction("Index", "HackHeroes");
+                   return RedirectToAction("Index", "FaceChecker");
 
                 }
                 
