@@ -3,7 +3,7 @@
 
 ## 🎯 Cel
 
-Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności uczniów oraz nauczycieli, zwiększenie efektywności wykorzystania czasu lekcyjnego oraz eliminacja potencjalnych oszustw związanych z obecnością na zajęciach.
+Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności uczniów oraz nauczycieli, zwiększenie efektywności wykorzystania czasu lekcyjnego oraz eliminacja potencjalnych oszustw związanych z obecnością na zajęciach. Aplikacja rozpoznaję twarzę uczniów wchodzących do klasy i wykonuję odpowiednie działania w zależności od rozpoznanej twarzy.
 
 ## 🔨 Technologie i pakiety
 
@@ -136,10 +136,10 @@ Aby wykorzystać pakiet w projekcie, można dodać konfigurację w Program.cs ja
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-✨ Funkcjonalności
+## ✨ Funkcjonalności
 - Utworzenie i zarządzanie kontami przez nauczycieli.
 - Tworzenie klas i zarządzanie uczniami.
-- Dodawanie zdjęć uczniów do bazy danych dla rozpoznawania twarzy.
+- Dodawanie zdjęć uczniów do bazy danych dla ich rozpoznawania twarzy.
 - Planowanie i uruchamianie lekcji.
 - Rozpoznawanie obecności i intruzów przez kamerę.
 - Szczegółowe raporty obecności.
