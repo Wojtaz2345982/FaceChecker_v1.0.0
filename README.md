@@ -10,7 +10,7 @@ Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności u
 ## 🔨 Technologie i pakiety
 
 Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i implementuje architekturę CQRS (Command Query Responsibility Segregation). Niezbędne API znajduje się w dołączonym do repozytorium folderze `API`.
-
+  
 ## Aby rozpocząć działanie z naszą aplikacją niezbędny jest adres API który w tym repozytorium jest ukryty ze względów bezpieczeństwa.
 ## Jeżeli chciałbyś przetestować aplikację napisz do nas na email: faceckecker1@gmail.com, udostępnimy dostęp do API
 
@@ -137,6 +137,12 @@ Aby wykorzystać pakiet w projekcie, można dodać konfigurację w Program.cs ja
     // Konfiguracja Entity Framework Core
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+## Biblioteki Javascript użyte w naszej aplikacji:
+- toastr.js - komunikaty w aplikacji,
+- Webcam.js - obsługa kamery internetowej na stronie,
+-JQuery
+
 
 ## ✨ Funkcjonalności
 - Utworzenie i zarządzanie kontami przez nauczycieli.
