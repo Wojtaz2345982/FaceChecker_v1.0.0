@@ -1,6 +1,7 @@
 # FACECHECKER - Automatyzacja sprawdzania obecności
 # https://facechecker.duckdns.org
-
+# Filmik przedstawiający działanie:
+# https://youtu.be/Dz7-Vh192ek
 ## 🎯 Cel
 
 Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności uczniów oraz nauczycieli, zwiększenie efektywności wykorzystania czasu lekcyjnego oraz eliminacja potencjalnych oszustw związanych z obecnością na zajęciach. Aplikacja rozpoznaję twarzę uczniów wchodzących do klasy i wykonuję odpowiednie działania w zależności od rozpoznanej twarzy.
