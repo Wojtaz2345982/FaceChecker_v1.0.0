@@ -1,6 +1,7 @@
 # FACECHECKER - Automatyzacja sprawdzania obecności
 # https://facechecker.duckdns.org
-# Filmik przedstawiający działanie:
+
+# Filmik przedstawiający działanie aplikacji:
 # https://youtu.be/Dz7-Vh192ek
 ## 🎯 Cel
 
