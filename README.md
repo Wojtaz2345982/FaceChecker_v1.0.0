@@ -1,4 +1,5 @@
 # FACECHECKER - Automatyzacja sprawdzania obecności
+# https://facechecker.duckdns.org
 
 ## 🎯 Cel
 
@@ -7,6 +8,9 @@ Celem aplikacji FACECHECKER jest usprawnienie procesu rejestrowania obecności u
 ## 🔨 Technologie i pakiety
 
 Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i implementuje architekturę CQRS (Command Query Responsibility Segregation). Niezbędne API znajduje się w dołączonym do repozytorium folderze `API`.
+
+##Aby rozpocząć działanie z naszą apliakcją niezbędny jest adres API który w tym repozytorium jest ukryty ze względów bezpieczeństwa.
+##Jeżeli chciałbyś przetestować aplikację napisz do nas na email: faceckecker1@gmail.com, udostępnimy dostęp do API
 
 ## 📋 Wymagania systemowe
 
@@ -17,6 +21,7 @@ Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i im
   - SQL Server: Dla przechowywania danych.
 
 ## 💿 Instalacja
+
 
 ### Wymagane oprogramowanie:
 
@@ -32,7 +37,12 @@ Aplikacja została zbudowana z wykorzystaniem ASP.NET Core MVC w **.NET 7** i im
 3. Zainstaluj Entity Framework Core Tools:
    ```bash
    dotnet tool install --global dotnet-ef
-Skonfiguruj połączenie z SQL Server.
+Skonfiguruj połączenie z SQL Server (Po zainstalowaniu odpowiednich paczek NuGet): 
+W pliku appsettings.json w sekcji connection strings zamiast "Connection string do bazy danych" umieść connection string do swojej bazy danych.
+Następnie w konsoli pakietów NuGet wykonaj: 
+  ```bash
+  Update-Database
+  ```
 📦 Pakiety NuGet:
   Instalacja w konsoli pakietów nuGet:
    ```bash
@@ -127,12 +137,13 @@ Aby wykorzystać pakiet w projekcie, można dodać konfigurację w Program.cs ja
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 ✨ Funkcjonalności
-Utworzenie i zarządzanie kontami przez nauczycieli.
-Tworzenie klas i zarządzanie uczniami.
-Dodawanie zdjęć uczniów do bazy danych dla rozpoznawania twarzy.
-Planowanie i uruchamianie lekcji.
-Rozpoznawanie obecności i intruzów przez kamery.
-Szczegółowe raporty obecności.
+- Utworzenie i zarządzanie kontami przez nauczycieli.
+- Tworzenie klas i zarządzanie uczniami.
+- Dodawanie zdjęć uczniów do bazy danych dla rozpoznawania twarzy.
+- Planowanie i uruchamianie lekcji.
+- Rozpoznawanie obecności i intruzów przez kamerę.
+- Szczegółowe raporty obecności.
+
 📖 Dokumentacja API
 Zapoznaj się z folderem API dla szczegółowych informacji o konfiguracji i użytkowaniu API rozpoznającego twarze.
 
