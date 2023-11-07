@@ -138,23 +138,26 @@ Aby wykorzystać pakiet w projekcie, można dodać konfigurację w Program.cs ja
 
 ## ✨ Funkcjonalności
 - Utworzenie i zarządzanie kontami przez nauczycieli.
-- Tworzenie klas i zarządzanie uczniami.
+- Tworzenie klas i zarządzanie nimi.
+- Dodawanie ucziów do klasy i zarządzanie nimi.
 - Dodawanie zdjęć uczniów do bazy danych dla ich rozpoznawania twarzy.
 - Planowanie i uruchamianie lekcji.
-- Rozpoznawanie obecności i intruzów przez kamerę.
+- Rozpoznawanie obecności uczniów.
+- Identyfikowanie przez kamerę intruzów wchodzących do klasy .
+- Apliakcja zarejestruje również osoby spóźnione
 - Szczegółowe raporty obecności.
 
-📖 Dokumentacja API
+## 📖 Dokumentacja API
 Zapoznaj się z folderem API dla szczegółowych informacji o konfiguracji i użytkowaniu API rozpoznającego twarze.
 
-🙌 Współpraca
+## 🙌 Współpraca
 Zachęcamy do zgłaszania Issue oraz Pull Requestów w celu wspólnego rozwoju projektu.
 
-👤 Autorzy
+## 👤 Autorzy
 Zespół FACECHECKER – Tworzymy z pasją, aby ułatwić życie szkolne.
 
-Kontakt: 
+## Kontakt: 
 email - facechecker1@gmail.com
 
-📄 Licencja
+## 📄 Licencja
 Projekt jest udostępniany na licencji MIT.
